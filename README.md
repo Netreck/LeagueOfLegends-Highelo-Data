@@ -2,7 +2,7 @@
 
 
 ## Intro
-Site: https://league-of-data.fly.dev
+Site: https://league-of-data.fly.dev    >>> Não funcionando em mobile no momento
 
 Em geral o Projeto é um site para analise de dados dos jogadores de League of Legends.
 
