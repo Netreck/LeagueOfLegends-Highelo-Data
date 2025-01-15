@@ -2,6 +2,8 @@
 
 
 ## Intro
+Site: https://league-of-data.fly.dev
+
 Em geral o Projeto é um site para analise de dados dos jogadores de League of Legends.
 
 No momento ele é apenas uma LeaderBoard do tier challenger pois a Riot Games exige um piloto do que esta fazendo para liberar o limite de requests da API e permitir mexer com mais dados.
