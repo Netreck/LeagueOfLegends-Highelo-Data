@@ -2,7 +2,9 @@
 
 
 ## Intro
-Em geral o Projeto é um site para analise de dados dos jogadores de League of Legends
+Em geral o Projeto é um site para analise de dados dos jogadores de League of Legends.
+
+No momento ele é apenas uma LeaderBoard do tier challenger pois a Riot Games exige um piloto do que esta fazendo para liberar o limite de requests da API e permitir mexer com mais dados.
 
 
 O Projeto tem o intuito de desenvolver minhas habilidades em Dados como ETL,PostgreSQL,DataVis,Automação de pipeline...
@@ -20,13 +22,13 @@ Sao coletados os dados dos top 200players do servidor Brasileiro (Challengers) p
 
 Na primeira API LEAGUE-V4 são coletados  de cada um dos 200 jogadores do rank challenger (200 melhores) Puuid(rankunico) , Pontos de liga ,Vitorias , Derrotas. E assim criamos o primeiro DF_1
 
-Depois para o segundo DF, usando o MATCH-V5, são coletadas os ids das 100 ultimas partidas de cada um desses PUUID e também com o MATCH-V5 são coletados dados de cada uma dessas partidas e coletadas apenas as informacoes referente ao jogador indicado.
+Depois para o segundo DF, usando o MATCH-V5, são coletadas os ids das 100 ultimas partidas de cada um dos jogadores challenger e também com usando MATCH-V5 são coletados dados de cada uma dessas partidas conectadas ao jogador indicado e armazenadas em outro DF que possue dados de 100 partidas de cada um dos jogadores, portanto, cerca de 20000 partidas.
 
-Com base neste ultimo DF criado , escolhemos as colunas mais importantes para o mvp (Uma LeaderBoard) e criamos novas colunas que serao adicionadas ao nosso DF_1, nessas novas colunas junta-se informações de cada uma das partidas dos jogadores como por exemplo: Campeões mais jogados , posição preferida e etc.
+Com base neste ultimo DF criado , escolhemos as colunas mais importantes para o MVP (Uma LeaderBoard) e criamos novas colunas que serao adicionadas ao nosso DF_1, nessas novas colunas junta-se informações de cada uma das partidas dos jogadores como por exemplo: Campeões mais jogados , posição preferida e etc.
 
 Por ser um MVP criado apenas para solicitar um limite de API maior para Riot Games explorei apenas o básico de informações para a criação do leaderboard.
 
-Após a criação do DF final , enviamos os dados para o PostgreSQL que esta hospedado na AmazonRDS.
+Após a criação do DF final ,  os dados são enviados para o PostgreSQL que esta hospedado na AmazonRDS.
 
 ### Deploy:
 Utilizando Django liguei com o banco de dados e organizei as informações no formato de uma LeaderBoard
