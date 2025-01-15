@@ -1,0 +1,26 @@
+{% load static %}
+<div class="pagina-inicial">
+    <header class="cabecalho">
+        <img width= 300px
+        height= 100px src="{% static '/assets/logo/3-teste.png' %}" alt="Logo" />
+        <div class="cabecalho__busca">
+            <div class="busca__fundo">
+                <form action="{%url 'buscar' %}">
+                    <input class="busca__input" type="text" name="buscar" placeholder="Invocador?">
+                    <button>
+                        <img class="busca__icone" src="{% static '/assets/ícones/1x/search.png' %}" alt="ícone de search">
+                    </button type="submit">
+                </form>
+                
+            </div>
+        </div>
+    </header>
+    <main class="principal">
+        <section class="menu-lateral">
+            <nav class="menu-lateral__navegacao">
+                <a href="{% url 'index'%}"><img src="{% static '/assets/ícones/1x/Home - ativo.png' %}"> Home</a>
+                
+              
+            </nav>
+        </section>
+        <section class="conteudo">

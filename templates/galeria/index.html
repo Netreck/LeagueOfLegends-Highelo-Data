@@ -1,0 +1,56 @@
+{% extends 'galeria/base.html'%}
+{% load static %}
+{% block content %}
+    
+    <section class="conteudo">
+        
+        
+            
+            
+            <table class="player-table">
+                <thead>
+                    <tr>
+                        <th>rank</th>
+                        <th></th>
+                        <th>Jogador</th>
+                        <th>Tier</th>
+                        <th>Pdl</th>
+                        <th>Role</th>
+                        <th>champion Pool</th>
+                    </tr>
+                </thead>
+                <tbody >
+                    {% if player_data %}
+                        {% for player in player_data %}
+                        
+                        <tr>
+                            <td><ul>
+                                
+                                  <li>{{forloop.counter0|add:1 }}</li>
+                                
+                              </ul></td>
+                            <td class="player-photo">
+                                <img src="{% static 'assets/profileicon/' %}{{ player.profileIconId }}.png" alt="foto">
+                            </td>
+                            <td class="td_center">{{ player.summoner_name }}
+                            <p class="winrate" >winrate = {{player.winrate|floatformat:2}} %</p>
+                            </td>
+                            <td class="td_center">{{ player.tier }} <img id="icon-photo" src="{% static 'RankChallenger.png' %}" alt="foto">
+                               
+                            </td>
+                            <td class=td_center>  {{player.leaguePoints }} LP  </td>
+
+                            <td><img id="icon-photo" src="{% static '/assets/'%}{{player.role_most_played}}.png" alt="foto"></td>
+                            <td class="icon-champion"><img src="{% static '/assets/champions/' %}{{ player.top1_champion|lower }}.png" alt="foto"><img src="{% static '/assets/champions/' %}{{ player.top3_champion|lower }}.png" alt="foto"><img src="{% static '/assets/champions/' %}{{ player.top2_champion|lower }}.png" alt="foto"></td>
+                        </tr>
+                        {% endfor %}
+                    {% else %}
+                        <tr>
+                            <td colspan="4">Nenhum dado disponível</td>
+                        </tr>
+                    {% endif %}
+                </tbody>
+            </table>
+        
+    </section>
+{% endblock %}
