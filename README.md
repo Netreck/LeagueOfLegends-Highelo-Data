@@ -2,12 +2,8 @@
 
 
 ## Intro
-Site: https://league-of-data.fly.dev    >>> Não funcionando em mobile no momento
 
 Em geral o Projeto é um site para analise de dados dos jogadores de League of Legends.
-
-No momento ele é apenas uma LeaderBoard do tier challenger pois a Riot Games exige um piloto do que esta fazendo para liberar o limite de requests da API e permitir mexer com mais dados.
-
 
 O Projeto tem o intuito de desenvolver minhas habilidades em Dados como ETL,PostgreSQL,DataVis,Automação de pipeline...
 
@@ -36,12 +32,3 @@ Após a criação do DF final ,  os dados são enviados para o PostgreSQL que es
 Utilizando Django liguei com o banco de dados e organizei as informações no formato de uma LeaderBoard
 
 
-## Proximas etapas
-
-- **Aguardando aumento de limite de requests da Riot API**
-- **Nova Página** com insights que comparam alterações de desempenho de itens e campeões (buffs e nerfs) entre os patches.
-- Melhorar HTML e CSS
-- **Mostrar informações** das 5 últimas partidas de cada jogador.
-- **Utilizar a API MATCH-V5-EVENTS** para trazer mais informações sobre as partidas, como: Mapa de localização das kills.
-- **Automatizar a coleta e armazenamento de dados** após o aumento do limite de requests.
-- **Nova Aba de Match-ups**.
